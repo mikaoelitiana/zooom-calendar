@@ -1,0 +1,79 @@
+<p class="text-center">
+  <button class="btn btn-default" type="submit">Add new event</button>
+</p>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="headline" class="col-sm-2 control-label">Title</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="headline" ng-model="event.headline" placeholder="Headline">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label">Description</label>
+    <div class="col-sm-10">
+      <textarea type="text" class="form-control" id="description" placeholder="Description" ng-model="event.description"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="address" class="col-sm-2 control-label">Address</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="address" placeholder="Address" ng-model="event.address">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="from" class="col-sm-2 control-label">From</label>
+    <div class="col-sm-10">
+      <p class="input-group">
+          <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="event.startdate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="to" class="col-sm-2 control-label">To</label>
+    <div class="col-sm-10">
+      <p class="input-group">
+          <input type="text" class="form-control" uib-datepicker-popup="yyyy-MM-dd" ng-model="event.enddate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="zip" class="col-sm-2 control-label">Zip</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="zip" placeholder="Zip" ng-model="event.zip">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="country" class="col-sm-2 control-label">Country</label>
+    <div class="col-sm-10">
+      <select class="form-control" ng-model="country_object" ng-options="country as country.name for country in countries track by country.code">
+      </select>
+      <input type="hidden" ng-value="country_object.code" ng-model="event.country">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="location" class="col-sm-2 control-label">Location</label>
+    <div class="col-sm-10">
+      <input id="locationpicker" type="text" ng-model="event.latlng" class="form-control" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="category" class="col-sm-2 control-label">Category</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="category" ng-model="event.category">
+        <option>1</option>
+        <option>2</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default" ng-click="saveEvent()">Save</button>
+    </div>
+  </div>
+</form>

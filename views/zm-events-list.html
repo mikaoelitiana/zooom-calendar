@@ -1,0 +1,19 @@
+<div class="events-list">
+  <h3>Events</h3>
+  <div class="event" ng-repeat="event in events">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="">{{event.headline}} / {{event.country}}</h4>
+        <span class="">{{event.startdate | moment}} - {{event.enddate | moment}}</span>
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-default">Edit</button>
+          <button type="button" class="btn btn-default">Hide</button>
+          <button type="button" class="btn btn-default">Delete</button>
+        </div>
+      </div>
+      <div class="panel-body">
+        {{event.description}}
+      </div>
+    </div>
+  </div>
+</div>

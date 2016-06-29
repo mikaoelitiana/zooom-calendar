@@ -1,5 +1,7 @@
 # zooom-calendar
 
+![screenshot](./screenshot.png)
+
 ## Installation
 
   - Run `bower install` in root directory

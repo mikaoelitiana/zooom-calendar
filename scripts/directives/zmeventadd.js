@@ -14,16 +14,20 @@ angular.module('zooomCalendarApp')
       scope: {
         data: '=data'
       },
-      controller: ['$scope', 'eventService', 'countryService', function($scope, eventService, countryService) {
+      controller: ['$scope', 'eventService', 'countryService', 'Notification', function($scope, eventService, countryService, Notification) {
         $scope.countries = countryService.get();
         $('#locationpicker').leafletLocationPicker();
         $scope.showEventForm = function (){
           $scope.showForm = true;
         };
         $scope.saveEvent = function () {
-          this.event.lat = this.event.latlng.split(',')[0];
-          this.event.lon = this.event.latlng.split(',')[1];
-          eventService.save(this.event);
+          eventService.save(this.event)
+          .then(function successCallback(response) {
+            Notification.success({message: 'Event saved.', delay: 5000});
+            $scope.events = response.data;
+          }, function errorCallback(response) {
+            Notification.error({message: 'Error while saving event.', delay: 5000});
+        });
         };
         $scope.open1 = function () {
           $scope.popup1.opened = true;

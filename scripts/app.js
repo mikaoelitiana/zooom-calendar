@@ -20,7 +20,8 @@ angular
     'LocalStorageModule',
     'angular-location-picker',
     'ui.bootstrap',
-    'leaflet-directive'
+    'leaflet-directive',
+    'ui-notification'
   ])
   .config(function ($routeProvider, $httpProvider, jwtInterceptorProvider) {
     jwtInterceptorProvider.tokenGetter = ['authProvider', function(authProvider) {

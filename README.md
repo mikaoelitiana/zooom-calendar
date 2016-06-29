@@ -1,12 +1,10 @@
 # zooom-calendar
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+## Installation
 
-## Build & development
-
-Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
+  - Run `bower install` in root directory
+  - Run `php composer.phar install` in `api` folder
+  - Install MySQL schema from `init.sql` file
+  - Copy and edit `api/config.php.sample` to `api/config.php`
+  - Start server from main folder with `php -S localhost:8080`
+  - Visit website in http://localhost:8080

@@ -21,7 +21,8 @@ angular
     'angular-location-picker',
     'ui.bootstrap',
     'leaflet-directive',
-    'ui-notification'
+    'ui-notification',
+    'dndLists'
   ])
   .config(function ($routeProvider, $httpProvider, jwtInterceptorProvider) {
     jwtInterceptorProvider.tokenGetter = ['authProvider', function(authProvider) {

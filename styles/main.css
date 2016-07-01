@@ -78,3 +78,13 @@ body {
     border-bottom: 0;
   }
 }
+
+/* Sorting list styles */
+.events {
+  list-style: none;
+}
+.events .dndPlaceholder {
+  padding: 5px;
+  background: #d0fec0;
+  margin: 5px;
+}

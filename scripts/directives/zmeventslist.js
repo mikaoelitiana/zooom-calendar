@@ -26,6 +26,7 @@ angular.module('zooomCalendarApp')
           }, function errorCallback() {
             Notification.error({message: 'Error while saving event.', delay: 5000});
           });
+          return item;
         };
       }]
     };

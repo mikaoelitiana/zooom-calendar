@@ -12,8 +12,7 @@ angular.module('zooomCalendarApp')
     var getEvents = function() {
       eventService.get()
         .then(function successCallback(response) {
-          $scope.events = response.data;
-          console.log('Data ok');
+          $scope.events = toArray(response.data);
         }, function errorCallback(response) {
           console.error('No data received', response);
       });

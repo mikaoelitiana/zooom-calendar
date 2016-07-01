@@ -17,7 +17,9 @@ $jwtMW = new \Slim\Middleware\JwtAuthentication([
 ]);
 
 $app->get('/events', function (Request $request, Response $response) {
-    $events = Event::all();
+    $events = Event::all()
+      ->sortBy('weight')
+      ->sortByDesc('id');
     $response = $response->withJson($events);
 
     return $response;

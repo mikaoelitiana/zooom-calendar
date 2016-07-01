@@ -19,7 +19,7 @@ angular.module('zooomCalendarApp')
       save: function (data) {
         return $http({
           method: 'POST',
-          url: '/api/events' + (data.id ? '/#{data.id}' : '' ),
+          url: '/api/events' + (data.id ? '/' + data.id : '' ),
           data: data
         });
       },

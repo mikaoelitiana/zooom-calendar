@@ -1,7 +1,7 @@
 <div class="events-list">
   <h3>Events</h3>
-  <div class="events" dnd-list="list">
-    <div class="event" ng-repeat="event in events" dnd-draggable="event">
+  <div class="events" dnd-list="events" dnd-drop="updateWeight(e, index, item, external, type)">
+    <div class="event" ng-repeat="event in events" dnd-draggable="event" dnd-moved="console.log($index, 1)">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="">{{event.headline}} / {{event.country}}</h4>

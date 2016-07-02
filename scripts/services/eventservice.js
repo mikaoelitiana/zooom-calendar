@@ -23,6 +23,15 @@ angular.module('zooomCalendarApp')
           data: data
         });
       },
+      delete: function (data) {
+        if (data.id) {
+          return $http({
+            method: 'DELETE',
+            url: '/api/events' + '/' + data.id,
+            data: data
+          });
+        }
+      },
       getByCategory: function (cat) {
         return $http({
           url: '/api/events/category/' + cat

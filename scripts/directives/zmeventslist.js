@@ -33,6 +33,17 @@ angular.module('zooomCalendarApp')
               Notification.error({message: 'Error while saving event.', delay: 5000});
             });
         };
+        $scope.deleteEvent = function (event) {
+          var del = window.confirm('Delete this event?');
+          if (del) {
+            eventService.delete(event)
+              .then(function successCallback() {
+                Notification.success({message: 'Event saved.', delay: 5000});
+              }, function errorCallback() {
+                Notification.error({message: 'Error while saving event.', delay: 5000});
+              });
+          }
+        };
         $scope.updateWeight = function (e, index, item, external, type) {
           var event = {
             id: item.id,

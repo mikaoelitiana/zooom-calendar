@@ -42,6 +42,14 @@ $app->get('/events/{id}', function (Request $request, Response $response) {
     return $response;
 });
 
+$app->delete('/events/{id}', function (Request $request, Response $response) {
+    $id = $request->getAttribute('id');
+    $events = Event::destroy($id);
+    $response = $response->withJson($events);
+
+    return $response;
+})->add($jwtMW);
+
 $app->get('/events/category/{id}', function (Request $request, Response $response) {
     $id = $request->getAttribute('id');
     $events = Event::where('category', $id)->get();

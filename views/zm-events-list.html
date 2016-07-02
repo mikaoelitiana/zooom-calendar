@@ -14,7 +14,7 @@
             <button type="button" class="btn btn-default">Edit</button>
             <button type="button" class="btn btn-default" ng-if="event.active == 1" ng-click="hideEvent(event)">Hide</button>
             <button type="button" class="btn btn-default" ng-if="event.active == 0" ng-click="unhideEvent(event)">Unhide</button>
-            <button type="button" class="btn btn-default">Delete</button>
+            <button type="button" class="btn btn-default" ng-click="deleteEvent(event)">Delete</button>
           </div>
         </div>
         <div class="panel-body">

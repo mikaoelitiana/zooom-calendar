@@ -8,11 +8,11 @@
  * Controller of the zooomCalendarApp
  */
 angular.module('zooomCalendarApp')
-  .controller('AdminCtrl', function ($http, $scope, eventService, countryService, Notification) {
+  .controller('AdminCtrl', function ($http, $scope, eventService, countryService, Notification, utils) {
     var getEvents = function() {
       eventService.get()
         .then(function successCallback(response) {
-          $scope.events = toArray(response.data);
+          $scope.events = utils.toArray(response.data);
         }, function errorCallback(response) {
           console.error('No data received', response);
       });

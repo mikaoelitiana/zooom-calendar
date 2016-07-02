@@ -71,7 +71,3 @@ angular
 $(document).ready(function(){
   $('#locationpicker').leafletLocationPicker();
 })
-
-var toArray = function (obj) {
-  return Object.keys(obj).map(function(k) { return obj[k] });
-};

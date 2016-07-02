@@ -25,6 +25,15 @@ $app->get('/events', function (Request $request, Response $response) {
     return $response;
 });
 
+$app->get('/events/active', function (Request $request, Response $response) {
+    $events = Event::where('active', 1)
+      ->orderBy('weight', 'ASC')
+      ->get();
+    $response = $response->withJson($events);
+
+    return $response;
+});
+
 $app->get('/events/{id}', function (Request $request, Response $response) {
     $id = $request->getAttribute('id');
     $events = Event::find($id);

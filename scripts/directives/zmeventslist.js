@@ -7,7 +7,7 @@
  * # zmEventsList
  */
 angular.module('zooomCalendarApp')
-  .directive('zmEventsList', function ($http) {
+  .directive('zmEventsList', function () {
     return {
       templateUrl: 'views/zm-events-list.html',
       restrict: 'E',
@@ -15,17 +15,35 @@ angular.module('zooomCalendarApp')
         events: '='
       },
       controller: ['$scope', 'eventService', 'Notification', function($scope, eventService, Notification) {
+        $scope.hideEvent = function (event) {
+          event.active = 0;
+          eventService.save(event)
+            .then(function successCallback() {
+              Notification.success({message: 'Event saved.', delay: 5000});
+            }, function errorCallback() {
+              Notification.error({message: 'Error while saving event.', delay: 5000});
+            });
+        };
+        $scope.unhideEvent = function (event) {
+          event.active = 1;
+          eventService.save(event)
+            .then(function successCallback() {
+              Notification.success({message: 'Event saved.', delay: 5000});
+            }, function errorCallback() {
+              Notification.error({message: 'Error while saving event.', delay: 5000});
+            });
+        };
         $scope.updateWeight = function (e, index, item, external, type) {
           var event = {
             id: item.id,
             weight: index
           };
           eventService.save(event)
-          .then(function successCallback() {
-            Notification.success({message: 'Event saved.', delay: 5000});
-          }, function errorCallback() {
-            Notification.error({message: 'Error while saving event.', delay: 5000});
-          });
+            .then(function successCallback() {
+              Notification.success({message: 'Event saved.', delay: 5000});
+            }, function errorCallback() {
+              Notification.error({message: 'Error while saving event.', delay: 5000});
+            });
           return item;
         };
       }]

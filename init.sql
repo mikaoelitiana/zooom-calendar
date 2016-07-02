@@ -1,5 +1,5 @@
 CREATE TABLE `events` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) UNSIGNED NOT NULL,
   `headline` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `description` text COLLATE utf8_unicode_ci,
   `address` text COLLATE utf8_unicode_ci,
@@ -9,7 +9,8 @@ CREATE TABLE `events` (
   `enddate` datetime DEFAULT NULL,
   `lat` double DEFAULT NULL,
   `lon` double DEFAULT NULL,
-  `category` smallint(5) unsigned DEFAULT NULL,
+  `category` smallint(5) UNSIGNED DEFAULT NULL,
   `weight` int(11) NOT NULL DEFAULT '0',
+  `active` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

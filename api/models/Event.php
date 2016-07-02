@@ -14,6 +14,7 @@ class Event extends Illuminate\Database\Eloquent\Model
       'lon',
       'category',
       'weight',
+      'active'
     ];
 	  public $timestamps = false;
 }

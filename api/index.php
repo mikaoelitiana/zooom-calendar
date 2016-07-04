@@ -28,6 +28,7 @@ $app->get('/events', function (Request $request, Response $response) {
 $app->get('/events/active', function (Request $request, Response $response) {
     $events = Event::where('active', 1)
       ->orderBy('weight', 'ASC')
+      ->limit(10)
       ->get();
     $response = $response->withJson($events);
 
@@ -52,7 +53,9 @@ $app->delete('/events/{id}', function (Request $request, Response $response) {
 
 $app->get('/events/category/{id}', function (Request $request, Response $response) {
     $id = $request->getAttribute('id');
-    $events = Event::where('category', $id)->get();
+    $events = Event::where('category', $id)
+      ->limit(10)
+      ->get();
     $response = $response->withJson($events);
 
     return $response;

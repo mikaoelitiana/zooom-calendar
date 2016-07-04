@@ -14,11 +14,11 @@ angular.module('zooomCalendarApp')
       'AngularJS',
       'Karma'
     ];
-    eventService.getByCategory(1)
+    eventService.getActiveByCategory(1)
       .then(function(data){
         $scope.category1 = data.data;
       });
-    eventService.getByCategory(2)
+    eventService.getActiveByCategory(2)
       .then(function(data){
         $scope.category2 = data.data;
       });

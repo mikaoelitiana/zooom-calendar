@@ -16,6 +16,12 @@ angular.module('zooomCalendarApp')
           url: '/api/events'
         });
       },
+      getActive: function () {
+        return $http({
+          method: 'GET',
+          url: '/api/events/active'
+        });
+      },
       save: function (data) {
         return $http({
           method: 'POST',
@@ -32,7 +38,7 @@ angular.module('zooomCalendarApp')
           });
         }
       },
-      getByCategory: function (cat) {
+      getActiveByCategory: function (cat) {
         return $http({
           url: '/api/events/category/' + cat
         });

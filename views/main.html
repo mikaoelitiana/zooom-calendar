@@ -1,7 +1,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="">
       <div class="container">
-        <leaflet lf-center="center" markers="markers" height="480px" width="100%"></leaflet>
+        <leaflet markers="markers" height="480px" width="100%" center="center"></leaflet>
       </div>
     </div>
 
@@ -13,7 +13,7 @@
             <h2>{{event.headline}}</h2>
             <span>{{$index + 1}}</span>
             <p>{{event.description}}</p>
-            <p><a class="btn btn-default" ng-click="showOnMap(event.id, event.lon, event.lat, event.headline)">Show on map</a></p>
+            <p><a class="btn btn-default" ng-click="showOnMap(event)">Show on map</a></p>
           </div>
         </div>
         <div class="col-md-4 col-sm-4">
@@ -21,7 +21,7 @@
             <h2>{{event.headline}}</h2>
             <span>{{$index + 1}}</span>
             <p>{{event.description}}</p>
-            <p><a class="btn btn-default" ng-click="showOnMap(event.id, event.lon, event.lat, event.headline)">Show on map</a></p>
+            <p><a class="btn btn-default" ng-click="showOnMap(event)">Show on map</a></p>
           </div>
         </div>
       </div>

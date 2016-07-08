@@ -58,7 +58,27 @@
   <div class="form-group">
     <label for="location" class="col-sm-2 control-label">Location</label>
     <div class="col-sm-10">
-      <input id="locationpicker" type="text" ng-model="event.latlng" class="form-control" />
+      <input id="gmap-location-input" type="text" class="form-control" />
+      <input id="gmap-location-lon" type="text" class="form-control hidden" ng-model="event.lon"/>
+      <input id="gmap-location-lat" type="text" class="form-control hidden" ng-model="event.lat"/>
+      <div id="gmap-locationpicker" style="width: 100%; height: 400px;" class="form-control"></div>
+      <script type="text/javascript">
+        $('#gmap-locationpicker').locationpicker({
+          inputBinding: {
+            latitudeInput: $('#gmap-location-lat'),
+            longitudeInput: $('#gmap-location-lon'),
+            locationNameInput: $('#gmap-location-input')
+          },
+          enableAutocomplete: true,
+          onchanged: function(currentLocation, radius, isMarkerDropped) {
+            $('#gmap-location-lat').val(currentLocation.latitude);
+            $('#gmap-location-lat').trigger('input');
+            $('#gmap-location-lon').val(currentLocation.longitude);
+            $('#gmap-location-lon').trigger('input');
+            console.log('Changed', $('#gmap-location-lon').val(), $('#gmap-location-lat').val());
+          }
+        });
+      </script>
     </div>
   </div>
   <div class="form-group">

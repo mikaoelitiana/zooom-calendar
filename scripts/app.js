@@ -69,5 +69,4 @@ angular
 });
 
 $(document).ready(function(){
-  $('#locationpicker').leafletLocationPicker();
 })

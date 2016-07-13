@@ -22,7 +22,8 @@ angular
     'ui.bootstrap',
     'leaflet-directive',
     'ui-notification',
-    'dndLists'
+    'dndLists',
+    'angularMoment'
   ])
   .config(function ($routeProvider, $httpProvider, jwtInterceptorProvider) {
     jwtInterceptorProvider.tokenGetter = ['authProvider', function(authProvider) {
@@ -61,12 +62,4 @@ angular
         else {
         }
     });
-  })
-  .filter('moment', function() {
-    return function(dateString, format) {
-      return '';
-    };
-});
-
-$(document).ready(function(){
-})
+  });

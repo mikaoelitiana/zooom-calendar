@@ -9,16 +9,22 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-8 col-sm-8">
+          <h2>Cat. 1</h2>
           <div class="col-md-6 col-sm-12" ng-repeat="event in category1 track by $index">
-            <h2>{{event.headline}}</h2>
+            <p class="dates">{{event.startdate}} - {{event.enddate}}</p>
+            <h3>{{event.headline}}</h3>
+            <p class="location">{{event.country}}</p>
             <span>{{$index + 1}}</span>
             <p>{{event.description}}</p>
             <p><a class="btn btn-default" ng-click="showOnMap(event)">Show on map</a></p>
           </div>
         </div>
         <div class="col-md-4 col-sm-4">
+          <h2>Cat. 2</h2>
           <div class="col-md-12" ng-repeat="event in category2 track by $index">
-            <h2>{{event.headline}}</h2>
+            <p class="dates">{{event.startdate}} - {{event.enddate}}</p>
+            <h3>{{event.headline}}</h3>
+            <p class="location"></p>
             <span>{{$index + 1}}</span>
             <p>{{event.description}}</p>
             <p><a class="btn btn-default" ng-click="showOnMap(event)">Show on map</a></p>

@@ -54,7 +54,9 @@ $app->delete('/events/{id}', function (Request $request, Response $response) {
 $app->get('/events/category/{id}', function (Request $request, Response $response) {
     $id = $request->getAttribute('id');
     $events = Event::where('category', $id)
+      ->where('active', 1)
       ->limit(10)
+      ->orderBy('weight', 'ASC')
       ->get();
     $response = $response->withJson($events);
 

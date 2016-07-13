@@ -23,7 +23,8 @@ angular
     'leaflet-directive',
     'ui-notification',
     'dndLists',
-    'angularMoment'
+    'angularMoment',
+    'truncate'
   ])
   .config(function ($routeProvider, $httpProvider, jwtInterceptorProvider) {
     jwtInterceptorProvider.tokenGetter = ['authProvider', function(authProvider) {

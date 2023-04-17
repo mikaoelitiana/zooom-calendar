@@ -1,7 +1,7 @@
 {
     "require": {
         "slim/slim": "^3.0",
-        "illuminate/database": "^5.2",
+        "illuminate/database": "^6.20",
         "firebase/php-jwt": "^3.0",
         "tuupola/slim-jwt-auth": "^2.3"
     },
